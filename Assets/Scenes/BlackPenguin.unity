@@ -379,12 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextBar: {fileID: 1799975403}
-  Order:
-  - "\uCE58\uC988\uD53C\uC790 \uCE58\uC988 \uBE7C\uACE0 \uC8FC\uC138\uC694"
-  BlackPowder:
-  - "\uD654\uC57D \uBE75\uBE75 \uD130\uC9C0\uAC8C"
-  Package:
-  - "\uD3EC\uC7A5\uC740 \uC788\uB294\uB4EF \uC5C6\uB294\uB4EF \uD574\uC918\uC694"
 --- !u!114 &1466377588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,8 +520,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 25f127c72307a4a4a8da8eb6b548ecdd, type: 2}
-  m_sharedMaterial: {fileID: -7742624563117945270, guid: 25f127c72307a4a4a8da8eb6b548ecdd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0906ee4ba2416214c9efdb74d20ebc8b, type: 2}
+  m_sharedMaterial: {fileID: 5982359571481685054, guid: 0906ee4ba2416214c9efdb74d20ebc8b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
