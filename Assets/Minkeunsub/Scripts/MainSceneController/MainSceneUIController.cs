@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    GameInProgress,
+    GameOver,
+    GameEnd
+}
+
 public class MainSceneUIController : Singleton<MainSceneUIController>
 {
 
@@ -21,6 +28,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
         {0, 2, 0, 1 },
     };
 
+    public GameState InGameState;
 
     void Start()
     {
@@ -29,7 +37,17 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
 
     void Update()
     {
-        
+        switch (InGameState)
+        {
+            case GameState.GameInProgress:
+                break;
+            case GameState.GameOver:
+                break;
+            case GameState.GameEnd:
+                break;
+            default:
+                break;
+        }
     }
 
     public void SubmitValue(PowderAmount _thisPowder, GaugeStatus[] _thisGauge, bool _Packed)
