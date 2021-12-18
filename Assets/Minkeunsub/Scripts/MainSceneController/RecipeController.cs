@@ -14,14 +14,17 @@ public enum GaugeStatus
 
 public class RecipeController : Singleton<RecipeController>
 {
+
+    Animator anim;
+
     [Header("Gameobjects")]
     public Button[] recipeButtons;
     public Image[] recipeDesces;
     public Image[] recipeGauges;
 
     [Header("Sprites")]
-    public Sprite[] idleSprite;
-    public Sprite[] selectedSprite;
+    public Sprite idleSprite;
+    public Sprite selectedSprite;
 
     [Header("Gauge")]
     public Color[] gauge_colors = new Color[4];
@@ -36,6 +39,7 @@ public class RecipeController : Singleton<RecipeController>
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         SetRecipeDesc(0);
         InitAllStatus();
     }
@@ -69,6 +73,12 @@ public class RecipeController : Singleton<RecipeController>
             gaugeStatus[i] = GaugeStatus.NONE;
             curGaugeIndex = 0;
         }
+        anim.SetBool("IsEvent", true);
+    }
+
+    public void EndEvent()
+    {
+        anim.SetBool("IsEvent", false);
     }
 
     public void SelectGauge(int state)
@@ -85,11 +95,11 @@ public class RecipeController : Singleton<RecipeController>
     {
         for (int i = 0; i < recipeDesces.Length; i++)
         {
-            recipeButtons[i].image.sprite = idleSprite[i];
+            recipeButtons[i].image.sprite = idleSprite;
             recipeDesces[i].gameObject.SetActive(false);
         }
 
-        recipeButtons[n].image.sprite = selectedSprite[n];
+        recipeButtons[n].image.sprite = selectedSprite;
         recipeDesces[n].gameObject.SetActive(true);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainSceneUIController : MonoBehaviour
+public class MainSceneUIController : Singleton<MainSceneUIController>
 {
 
     public PowderAmount thisPowderAmount;
@@ -13,8 +13,12 @@ public class MainSceneUIController : MonoBehaviour
 
     public int[,] recipe =
     {
+        {1, 2, 1, 2 },
+        {0, 1, 3, 1 },
+        {1, 0, 2, 2 },
+        {0, 0, 0, 3 },
         {1, 1, 2, 2 },
-        {1, 2, 2, 1 },
+        {0, 2, 0, 1 },
     };
 
 
@@ -43,6 +47,8 @@ public class MainSceneUIController : MonoBehaviour
 
     public int CheckValue(PowderAmount _checkPowder, GaugeStatus[] _checkGauge, bool _checkPacked)
     {
+        point = 0;
+
         if(Packed == _checkPacked)
         {
             point++;
