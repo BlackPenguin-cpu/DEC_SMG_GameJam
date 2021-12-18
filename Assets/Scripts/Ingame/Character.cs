@@ -39,7 +39,7 @@ public class Character : TextPrint
 
 
     [SerializeField] int recipe;
-    [SerializeField]  int[] Gaugerecipe = new int[5];
+    [SerializeField] int[] Gaugerecipe = new int[6];
     [SerializeField] PowderAmount powder;
     [SerializeField] bool package;
 
@@ -75,9 +75,13 @@ public class Character : TextPrint
         int checkPoint = 0;
         foreach (int value in Gaugerecipe)
         {
-            checkPoint += value;
+            if (value != 0)
+                checkPoint++;
         }
         checkPoint += 2;
+        Debug.Log(checkPoint);
+        Debug.Log(point);
+
         if (point != checkPoint)
         {
             return false;
@@ -99,10 +103,9 @@ public class Character : TextPrint
         recipe = Random.Range(0, 6);
         powder = (PowderAmount)Random.Range(0, 5);
         package = Random.Range(0, 2) == 1 ? true : false;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 6; i++)
         {
-            Gaugerecipe[i+1] = MainSceneUIController.recipe[recipe, i];
-            Debug.Log(Gaugerecipe[i]);
+            Gaugerecipe[i] = MainSceneUIController.recipe[recipe, i];
         }
     }
     IEnumerator Chat()

@@ -59,7 +59,6 @@ public class SelectController : Singleton<SelectController>
         foreach (var item in RecipeController.Instance.gaugeStatus)
         {
             temp.Add((int)item);
-            Debug.Log(item);
         }
 
         MainSceneUIController.Instance.SubmitValue(curPowderAmount, temp.ToArray(), Packing);
