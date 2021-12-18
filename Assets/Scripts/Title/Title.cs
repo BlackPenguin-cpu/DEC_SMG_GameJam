@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Title : MonoBehaviour
 {
+    public AudioSource btnSound;
     public GameObject developerPanel;
     public GameObject howToPanel;
     public GameObject fadeOutPanel;
@@ -36,32 +37,38 @@ public class Title : MonoBehaviour
 
     public void StargGame()
     {
+        btnSound.Play();
         fadeInOut.TryFadeOut();
         startGame = true;
     }
 
     public void ShowDeveloperPanel()
     {
+        btnSound.Play();
         developerPanel.SetActive(true);
     }
 
     public void HideDeveloperPanel()
     {
+        btnSound.Play();
         developerPanel.SetActive(false);
     }
 
     public void ShowHowToPanel()
     {
+        btnSound.Play();
         howToPanel.SetActive(true);
     }
 
     public void HideHowToPanel()
     {
+        btnSound.Play();
         howToPanel.SetActive(false);
     }
 
     public void ExitGame()
     {
+        btnSound.Play();
         Application.Quit();
     }
 }
