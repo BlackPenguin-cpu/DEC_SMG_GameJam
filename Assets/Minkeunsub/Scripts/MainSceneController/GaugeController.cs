@@ -34,6 +34,11 @@ public class GaugeController : Singleton<GaugeController>
             }
             delay += Time.deltaTime;
         }
+
+        if(curValue <= 0)
+        {
+            MainSceneUIController.Instance.InGameState = GameState.GameOver;
+        }
     }
 
     public void DecreaseValue(float _value)
