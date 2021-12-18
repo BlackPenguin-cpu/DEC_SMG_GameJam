@@ -14,7 +14,7 @@ public class Day : Singleton<Day>
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
 
-    void Start()
+    void Awake()
     {
         CustomerComing();
     }

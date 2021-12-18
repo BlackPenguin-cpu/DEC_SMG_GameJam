@@ -26,6 +26,7 @@ public class NewsController : MonoBehaviour
     void Start()
     {
         SetNextSibling();
+        SetNewCharacters();
         InitializeNews();
         anim = GetComponent<Animator>();
     }
