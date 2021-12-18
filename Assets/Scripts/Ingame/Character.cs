@@ -37,7 +37,7 @@ public class Character : TextPrint
     bool isCriminal;
     bool NewsIssue;
     public CharacterEnum type;
-    public CharacterEnum Criminal;
+    public CharacterEnum[] Criminal;
 
 
     [SerializeField] int recipe;
@@ -52,6 +52,7 @@ public class Character : TextPrint
 
     public List<PrintData> printData;
     int point;
+    public bool canComplte;
     private void Start()
     {
         RandSituation();
@@ -61,6 +62,15 @@ public class Character : TextPrint
     string NewsPaperReboot()
     {
         int customer = Day.Instance.customer;
+
+        for (int i = 0; i < customer; i++)
+        {
+            if (Random.Range(0, customer - 1) == 0)
+            {
+                Criminal[Criminal.Length + 1] = (CharacterEnum)i;
+            }
+        }
+
 
         return "asd";
     }
@@ -100,10 +110,11 @@ public class Character : TextPrint
 
     void RandSituation()
     {
+        TextBar.text = "";
         type = (CharacterEnum)Random.Range(0, 7);
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
-        powder = (PowderAmount)Random.Range(1, 5);
+        powder = (PowderAmount)Random.Range(1, 4);
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 6; i++)
         {
@@ -115,20 +126,38 @@ public class Character : TextPrint
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder-1], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 1 : 0], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 0 : 1], 0.05f));
+        canComplte = true;
     }
 
     public void Complete()
     {
-        Debug.Log("�ͼ��ߴ�!");
-        TextBar.text = "��! �����ߴ�!";
+        TextBar.text = printData[(int)type].SuccedOrFail[0];
+        StartCoroutine(Evade());
     }
     public void Fail()
     {
-        Debug.Log("���ƴϾ�");
-        TextBar.text = "�� �ƴϾ�";
+        TextBar.text = printData[(int)type].SuccedOrFail[1];
+        StartCoroutine(Evade());
+    }
+    IEnumerator Evade()
+    {
+        canComplte = false;
+        yield return new WaitForSeconds(1);
+        while (ChracterBorad.color.a >= 0f)
+        {
+            ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a - 0.01f);
+            yield return new WaitForSeconds(0.02f);
+        }
+        RandSituation();
+        while (ChracterBorad.color.a < 1)
+        {
+            ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a + 0.01f);
+            yield return new WaitForSeconds(0.02f);
+        }
+        StartCoroutine(Chat());
     }
 }
