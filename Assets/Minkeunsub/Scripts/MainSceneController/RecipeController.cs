@@ -27,7 +27,7 @@ public class RecipeController : Singleton<RecipeController>
     public Color[] gauge_colors = new Color[4];
     public GaugeStatus[] gaugeStatus = new GaugeStatus[5];
     public int curGaugeIndex = 0;
-    public int maxGaugeIndex = 5;
+    public int maxGaugeIndex = 6;
 
     protected override void Awake()
     {
@@ -76,24 +76,7 @@ public class RecipeController : Singleton<RecipeController>
         if (curGaugeIndex < maxGaugeIndex)
         {
             recipeGauges[curGaugeIndex].color = gauge_colors[(int)state];
-
-            switch (state)
-            {
-                case 0:
-                    gaugeStatus[curGaugeIndex] = GaugeStatus.A_YELLOW;
-                    break;
-                case 1:
-                    gaugeStatus[curGaugeIndex] = GaugeStatus.B_GREEN;
-                    break;
-                case 2:
-                    gaugeStatus[curGaugeIndex] = GaugeStatus.C_BLUE;
-                    break;
-                case 3:
-                    gaugeStatus[curGaugeIndex] = GaugeStatus.D_RED;
-                    break;
-                default:
-                    break;
-            }
+            gaugeStatus[curGaugeIndex] = (GaugeStatus)state;
             curGaugeIndex++;
         }
     }
