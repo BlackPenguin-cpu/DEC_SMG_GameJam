@@ -31,7 +31,7 @@ public class RecipeController : Singleton<RecipeController>
 
     protected override void Awake()
     {
-          
+
     }
 
     void Start()
@@ -56,24 +56,7 @@ public class RecipeController : Singleton<RecipeController>
             else
             {
                 int rand = Random.Range(1, 5);
-                Debug.Log(rand);
-                switch (rand)
-                {
-                    case 1:
-                        SelectGauge(GaugeStatus.A_YELLOW);
-                        break;
-                    case 2:
-                        SelectGauge(GaugeStatus.B_GREEN);
-                        break;
-                    case 3:
-                        SelectGauge(GaugeStatus.C_BLUE);
-                        break;
-                    case 4:
-                        SelectGauge(GaugeStatus.D_RED);
-                        break;
-                    default:
-                        break;
-                }
+                SelectGauge(rand);
             }
         }
     }
@@ -88,12 +71,29 @@ public class RecipeController : Singleton<RecipeController>
         }
     }
 
-    public void SelectGauge(GaugeStatus state)
+    public void SelectGauge(int state)
     {
-        if(curGaugeIndex < maxGaugeIndex)
+        if (curGaugeIndex < maxGaugeIndex)
         {
-            recipeGauges[curGaugeIndex].color = gauge_colors[(int)state - 1];
-            gaugeStatus[curGaugeIndex] = state;
+            recipeGauges[curGaugeIndex].color = gauge_colors[(int)state];
+
+            switch (state)
+            {
+                case 0:
+                    gaugeStatus[curGaugeIndex] = GaugeStatus.A_YELLOW;
+                    break;
+                case 1:
+                    gaugeStatus[curGaugeIndex] = GaugeStatus.B_GREEN;
+                    break;
+                case 2:
+                    gaugeStatus[curGaugeIndex] = GaugeStatus.C_BLUE;
+                    break;
+                case 3:
+                    gaugeStatus[curGaugeIndex] = GaugeStatus.D_RED;
+                    break;
+                default:
+                    break;
+            }
             curGaugeIndex++;
         }
     }
