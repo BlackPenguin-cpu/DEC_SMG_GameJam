@@ -29,7 +29,7 @@ public class Day : Singleton<Day>
             StartCoroutine(DaynextDay());
         }
     }
-    IEnumerator DaynextDay()
+    public IEnumerator DaynextDay()
     {
 
         Debug.Log("Clear");
@@ -48,7 +48,7 @@ public class Day : Singleton<Day>
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    IEnumerator GameOver()
+    public IEnumerator GameOver()
     {
         BigDaytext.gameObject.SetActive(true);
         while (BlackScreen.color.a > 0)
