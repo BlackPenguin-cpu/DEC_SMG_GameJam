@@ -39,20 +39,21 @@ public class Character : TextPrint
 
 
     int recipe;
-    List<GaugeStatus> Gaugerecipe;
+    GaugeStatus[] Gaugerecipe;
     PowderAmount powder;
     bool package;
 
     public TextMeshProUGUI TextBar;
 
-    Sprite[] ChracterSprite;
-    SpriteRenderer ChracterBorad;
+    public Sprite[] ChracterSprite;
+    public Image ChracterBorad;
 
     public List<PrintData> printData;
     int point;
     private void Start()
     {
         RandSituation();
+        SuccedCheck();
         StartCoroutine(Chat());
     }
 
@@ -64,7 +65,7 @@ public class Character : TextPrint
     }
     public bool SuccedCheck()
     {
-        point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe.ToArray(), package);
+        point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe, package);
         int checkPoint = 0;
         foreach (GaugeStatus value in Gaugerecipe)
         {
@@ -88,13 +89,15 @@ public class Character : TextPrint
     void RandSituation()
     {
         type = (CharacterEnum)Random.Range(0, 7);
-        int recipe = Random.Range(0, 6);
+        ChracterBorad.sprite = ChracterSprite[(int)type];
+        recipe = Random.Range(0, 6);
+        powder = (PowderAmount)Random.Range(0, 5);
+        package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 4; i++)
         {
             Gaugerecipe[i] = (GaugeStatus)MainSceneUIController.Instance.recipe[recipe, i];
+            Debug.Log(Gaugerecipe[i]);
         }
-        powder = (PowderAmount)Random.Range(0, 5);
-        package = Random.Range(0, 2) == 1 ? true : false;
     }
     IEnumerator Chat()
     {
