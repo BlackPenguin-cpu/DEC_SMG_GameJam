@@ -807,6 +807,8 @@ GameObject:
   - component: {fileID: 403939834}
   - component: {fileID: 403939833}
   - component: {fileID: 403939832}
+  - component: {fileID: 403939835}
+  - component: {fileID: 403939836}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -889,6 +891,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 403939836}
+        m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+        m_MethodName: StartTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &403939833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,6 +941,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403939830}
   m_CullTransparentMesh: 1
+--- !u!95 &403939835
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403939830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ef4e0a5c52f0654f87124f86cfb0b00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &403939836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403939830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2671d3f5dc72eba43aeb46f141659aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &461102390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1125,8 @@ GameObject:
   - component: {fileID: 514145658}
   - component: {fileID: 514145657}
   - component: {fileID: 514145656}
+  - component: {fileID: 514145659}
+  - component: {fileID: 514145660}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -1162,6 +1209,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 514145660}
+        m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+        m_MethodName: StartTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &514145657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,6 +1259,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514145654}
   m_CullTransparentMesh: 1
+--- !u!95 &514145659
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514145654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ef4e0a5c52f0654f87124f86cfb0b00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &514145660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514145654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2671d3f5dc72eba43aeb46f141659aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1385,8 @@ GameObject:
   - component: {fileID: 621707421}
   - component: {fileID: 621707420}
   - component: {fileID: 621707419}
+  - component: {fileID: 621707422}
+  - component: {fileID: 621707423}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -1377,6 +1469,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 621707423}
+        m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+        m_MethodName: StartTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &621707420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,6 +1519,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621707417}
   m_CullTransparentMesh: 1
+--- !u!95 &621707422
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621707417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 656642cc54e069346a0c4ca6402bfb05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &621707423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621707417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2671d3f5dc72eba43aeb46f141659aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695176082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,7 +2000,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 892682686}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1175680270}
+        m_TargetAssemblyTypeName: SelectController, Assembly-CSharp
+        m_MethodName: SelectPowderAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &892682686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2490,6 +2637,8 @@ GameObject:
   - component: {fileID: 973225347}
   - component: {fileID: 973225346}
   - component: {fileID: 973225345}
+  - component: {fileID: 973225348}
+  - component: {fileID: 973225349}
   m_Layer: 5
   m_Name: SelectButton
   m_TagString: Untagged
@@ -2572,6 +2721,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 973225349}
+        m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+        m_MethodName: StartTouch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &973225346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,6 +2771,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973225343}
   m_CullTransparentMesh: 1
+--- !u!95 &973225348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973225343}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ef4e0a5c52f0654f87124f86cfb0b00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &973225349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973225343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2671d3f5dc72eba43aeb46f141659aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021020672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,7 +3142,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113550687}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1175680270}
+        m_TargetAssemblyTypeName: SelectController, Assembly-CSharp
+        m_MethodName: SelectPowderAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113550687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3177,7 +3381,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1128083871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1175680270}
+        m_TargetAssemblyTypeName: SelectController, Assembly-CSharp
+        m_MethodName: SelectPowderAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1128083871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3225,6 +3441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1175680269}
+  - component: {fileID: 1175680270}
   m_Layer: 5
   m_Name: Select
   m_TagString: Untagged
@@ -3255,6 +3472,26 @@ RectTransform:
   m_AnchoredPosition: {x: -480, y: -0.0000076293945}
   m_SizeDelta: {x: 960, y: 531.41}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1175680270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175680268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e707f09a4c381f247b3af70abd97d83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curPowderAmount: 0
+  powderAmountSelect:
+  - {fileID: 1113550686}
+  - {fileID: 1562432001}
+  - {fileID: 1128083870}
+  - {fileID: 892682685}
+  PackingButton: {fileID: 2090813381}
+  Packing: 0
 --- !u!1 &1229583346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,7 +3966,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1562432002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1175680270}
+        m_TargetAssemblyTypeName: SelectController, Assembly-CSharp
+        m_MethodName: SelectPowderAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1562432002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4544,7 +4793,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2090813382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1175680270}
+        m_TargetAssemblyTypeName: SelectController, Assembly-CSharp
+        m_MethodName: SelectPacking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2090813382
 MonoBehaviour:
   m_ObjectHideFlags: 0
