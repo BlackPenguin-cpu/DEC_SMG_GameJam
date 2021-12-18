@@ -5,6 +5,7 @@ using UnityEngine;
 public class Title : MonoBehaviour
 {
     public GameObject developerPanel;
+    public GameObject howToPanel;
     public GameObject fadeOutPanel;
     FadeInOut fadeInOut;
     bool startGame = false;
@@ -47,6 +48,16 @@ public class Title : MonoBehaviour
     public void HideDeveloperPanel()
     {
         developerPanel.SetActive(false);
+    }
+
+    public void ShowHowToPanel()
+    {
+        howToPanel.SetActive(true);
+    }
+
+    public void HideHowToPanel()
+    {
+        howToPanel.SetActive(false);
     }
 
     public void ExitGame()
