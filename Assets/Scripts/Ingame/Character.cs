@@ -24,15 +24,19 @@ public struct PrintData
     [TextArea]
     public string[] Package;
 }
-
+[System.Serializable]
+public struct NewText
+{
+    public string CriminalText;
+    public string[] NewsText;
+}
 public class Character : TextPrint
 {
     bool isCriminal;
     bool NewsIssue;
     public CharacterEnum type;
     public CharacterEnum Criminal;
-    public string[] CriminalText;
-    public string[] NewsText;
+
 
     int recipe;
     List<GaugeStatus> Gaugerecipe;
@@ -56,7 +60,7 @@ public class Character : TextPrint
     {
         int customer = Day.Instance.customer;
 
-        
+        return "asd";
     }
     public bool SuccedCheck()
     {

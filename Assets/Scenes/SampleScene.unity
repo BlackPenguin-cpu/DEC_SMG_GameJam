@@ -5145,6 +5145,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404890797}
   m_CullTransparentMesh: 1
+--- !u!1 &1455704780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455704782}
+  - component: {fileID: 1455704781}
+  m_Layer: 0
+  m_Name: Character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1455704781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455704780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e3a767c9bf8bf4c9d6504aef2c20b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  Criminal: 0
+  CriminalText: []
+  TextBar: {fileID: 0}
+  printData:
+  - Order:
+    - "\uC544\uC800\uC528! \uC800 \uC608\uC804\uC5D0 \uB9D0\uD55C \uADF8 \uCE5C\uAD6C\uC640
+      \uC798\uB410\uC5B4\uC694! \uB0A8\uC790\uCE5C\uAD6C\uB791 \uB180\uB7EC\uAC00\uC11C
+      \uC4F8 \uD3ED\uC8FD\uC774 \uD544\uC694\uD574\uC694!"
+    - 
+    - 
+    - 
+    - 
+    - 
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+--- !u!4 &1455704782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455704780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18054357, y: -1.2350227, z: 52.00836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476960612
 GameObject:
   m_ObjectHideFlags: 0
