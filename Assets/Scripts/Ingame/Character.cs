@@ -16,10 +16,21 @@ public class Character : TextPrint
     public string[][] Order;
     public string[][] BlackPowder;
     public string[][] Package;
+
+    int point;
+
+    private void Awake()
+    {
+        Order[0][0] = "ぞしぞしぞ照錠穣";
+    }
     private void Start()
     {
         RandSituation();
         StartCoroutine(Chat());
+    }
+
+    void Check()
+    {
     }
 
     void RandSituation()
