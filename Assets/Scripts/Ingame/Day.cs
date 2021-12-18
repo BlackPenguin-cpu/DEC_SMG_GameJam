@@ -8,7 +8,7 @@ public class Day : Singleton<Day>
 {
     public int day = 0;
     public int customer;
-    public CharacterEnum[] customerType;
+    public List<CharacterEnum> customerType;
     public int customerCount;
     public TextMeshProUGUI Daytext;
     public Image BlackScreen;
@@ -40,7 +40,7 @@ public class Day : Singleton<Day>
         yield return new WaitForSeconds(1);
         while (BlackScreen.color.a < 1)
         {
-            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a +0.01f);
+            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a + 0.01f);
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -60,16 +60,11 @@ public class Day : Singleton<Day>
         for (int i = 0; i < customer; i++)
         {
             int Character = Random.Range(0, 7);
-            foreach (int value in customerType)
+
+            if (!customerType.Contains((CharacterEnum)Character))
             {
-                if (Character == value)
-                {
-                    i--;
-                    goto EXIT;
-                }
+                customerType.Add((CharacterEnum)customer);
             }
-            customerType[customerType.Length + 1] = (CharacterEnum)customer;
-        EXIT:;
         }
     }
 }
