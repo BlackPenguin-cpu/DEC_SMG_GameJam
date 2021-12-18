@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Title : MonoBehaviour
                 timer += Time.deltaTime;
             Debug.Log("STARG GAME");
             //æ¿ ¿Ãµø
+            SceneManager.LoadScene("SampleScene");
         }
     }
 
