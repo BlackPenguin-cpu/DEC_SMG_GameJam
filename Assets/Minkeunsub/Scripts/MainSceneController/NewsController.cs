@@ -27,7 +27,7 @@ public class NewsController : MonoBehaviour
 
     void Update()
     {
-        AnimationDebug();
+        //AnimationDebug();
     }
 
     void AnimationDebug()
@@ -36,6 +36,11 @@ public class NewsController : MonoBehaviour
         {
             anim.SetBool("IsPass", true);
         }
+    }
+
+    public void NextNews()
+    {
+        anim.SetBool("IsPass", true);
     }
 
     public void InitializeNews()

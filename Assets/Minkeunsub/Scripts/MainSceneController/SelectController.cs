@@ -54,6 +54,9 @@ public class SelectController : Singleton<SelectController>
 
     public void Compelete()
     {
+
+
+
         Packing = false;
         InitializeButtons();
         PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
