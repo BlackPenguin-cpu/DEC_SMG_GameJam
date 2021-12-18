@@ -23,6 +23,8 @@ public struct PrintData
     public string[] BlackPowder;
     [TextArea]
     public string[] Package;
+    [TextArea]
+    public string[] SuccedOrFail;
 }
 [System.Serializable]
 public struct NewText
@@ -101,7 +103,7 @@ public class Character : TextPrint
         type = (CharacterEnum)Random.Range(0, 7);
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
-        powder = (PowderAmount)Random.Range(0, 5);
+        powder = (PowderAmount)Random.Range(1, 5);
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 6; i++)
         {
@@ -113,7 +115,7 @@ public class Character : TextPrint
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder-1], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 1 : 0], 0.05f));
@@ -121,12 +123,12 @@ public class Character : TextPrint
 
     public void Complete()
     {
-        Debug.Log("¿Í¼ºÇß´Ù!");
-        TextBar.text = "¿Í! ¼º°øÇß´Ù!";
+        Debug.Log("ï¿½Í¼ï¿½ï¿½ß´ï¿½!");
+        TextBar.text = "ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½!";
     }
     public void Fail()
     {
-        Debug.Log("ÀÀ¾Æ´Ï¾ß");
-        TextBar.text = "ÀÀ ¾Æ´Ï¾ß";
+        Debug.Log("ï¿½ï¿½ï¿½Æ´Ï¾ï¿½");
+        TextBar.text = "ï¿½ï¿½ ï¿½Æ´Ï¾ï¿½";
     }
 }
