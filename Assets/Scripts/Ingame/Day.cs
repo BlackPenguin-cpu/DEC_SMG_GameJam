@@ -10,6 +10,7 @@ public class Day : Singleton<Day>
     public int customer;
     public List<CharacterEnum> customerType;
     public int customerCount;
+    public Character character;
     public TextMeshProUGUI Daytext;
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
@@ -63,8 +64,13 @@ public class Day : Singleton<Day>
 
             if (!customerType.Contains((CharacterEnum)Character))
             {
-                customerType.Add((CharacterEnum)customer);
+                customerType.Add((CharacterEnum)Character);
+            }
+            else
+            {
+                i--;
             }
         }
+        character.RandSituation();
     }
 }

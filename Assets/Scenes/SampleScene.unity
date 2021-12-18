@@ -4321,6 +4321,9 @@ MonoBehaviour:
   - zxcvzxcvzxcvzxs
   - zxcvzxcvzxcvzxs
   curIdx: 0
+  CurCharacters: 
+  NowUseSprite: []
+  NowUseText: []
   nextImg: {fileID: 273576820}
   nextTxt: {fileID: 575578724}
   curImg: {fileID: 1103580090}
@@ -6112,6 +6115,7 @@ MonoBehaviour:
   customer: 0
   customerType: 
   customerCount: 0
+  character: {fileID: 1455704781}
   Daytext: {fileID: 1515437891}
   BlackScreen: {fileID: 776157708}
   BigDaytext: {fileID: 249062898}
