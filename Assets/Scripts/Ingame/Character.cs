@@ -30,6 +30,9 @@ public class Character : TextPrint
     bool isCriminal;
     bool NewsIssue;
     public CharacterEnum type;
+    public CharacterEnum Criminal;
+    public string[] CriminalText;
+    public string[] NewsText;
 
     int recipe;
     List<GaugeStatus> Gaugerecipe;
@@ -49,7 +52,12 @@ public class Character : TextPrint
         StartCoroutine(Chat());
     }
 
+    string NewsPaperReboot()
+    {
+        int customer = Day.Instance.customer;
 
+        
+    }
     public bool SuccedCheck()
     {
         point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe.ToArray(), package);
