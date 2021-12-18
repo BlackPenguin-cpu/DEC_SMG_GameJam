@@ -43,6 +43,8 @@ public class MainSceneUIController : MonoBehaviour
 
     public int CheckValue(PowderAmount _checkPowder, GaugeStatus[] _checkGauge, bool _checkPacked)
     {
+        point = 0;
+
         if(Packed == _checkPacked)
         {
             point++;
