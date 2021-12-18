@@ -38,10 +38,10 @@ public class Character : TextPrint
     public CharacterEnum Criminal;
 
 
-    int recipe;
-    int[] Gaugerecipe = new int[5];
-    PowderAmount powder;
-    bool package;
+    [SerializeField] int recipe;
+    [SerializeField]  int[] Gaugerecipe = new int[5];
+    [SerializeField] PowderAmount powder;
+    [SerializeField] bool package;
 
     public TextMeshProUGUI TextBar;
 
@@ -101,7 +101,7 @@ public class Character : TextPrint
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 4; i++)
         {
-            Gaugerecipe[i] = MainSceneUIController.recipe[recipe, i];
+            Gaugerecipe[i+1] = MainSceneUIController.recipe[recipe, i];
             Debug.Log(Gaugerecipe[i]);
         }
     }
@@ -116,4 +116,14 @@ public class Character : TextPrint
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 1 : 0], 0.05f));
     }
 
+    public void Complete()
+    {
+        Debug.Log("와성했다!");
+        TextBar.text = "와! 성공했다!";
+    }
+    public void Fail()
+    {
+        Debug.Log("응아니야");
+        TextBar.text = "응 아니야";
+    }
 }

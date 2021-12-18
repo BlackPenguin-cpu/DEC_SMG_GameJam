@@ -5116,6 +5116,7 @@ MonoBehaviour:
   - {fileID: 1128083870}
   - {fileID: 892682685}
   PackingButton: {fileID: 2090813381}
+  NPC_Info: {fileID: 1455704781}
   Packing: 0
 --- !u!1 &1229583346
 GameObject:
@@ -5521,6 +5522,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   Criminal: 0
+  recipe: 0
+  Gaugerecipe: 0000000000000000000000000000000000000000
+  powder: 0
+  package: 0
   TextBar: {fileID: 1014930493}
   ChracterSprite:
   - {fileID: 21300000, guid: 39c1180c6347a674185d4f9a7e646831, type: 3}

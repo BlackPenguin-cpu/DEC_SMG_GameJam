@@ -16,6 +16,7 @@ public class SelectController : Singleton<SelectController>
     public PowderAmount curPowderAmount;
     public Button[] powderAmountSelect;
     public Button PackingButton;
+    public Character NPC_Info;
 
     public bool Packing;
 
@@ -69,6 +70,15 @@ public class SelectController : Singleton<SelectController>
         PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
         RecipeController.Instance.InitAllStatus(false);
         // npc 조건과 비교
+
+        if (NPC_Info.SuccedCheck())
+        {
+            NPC_Info.Complete();
+        }
+        else
+        {
+            NPC_Info.Fail();
+        }
     }
 
     
