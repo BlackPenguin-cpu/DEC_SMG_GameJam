@@ -4,19 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public abstract class TextPrint : MonoBehaviour
 {
-    TextMeshProUGUI Tmp;
-    private void Start()
+    protected virtual IEnumerator PrintText(TextMeshProUGUI Tmp,string text, float speed)
     {
-        Tmp = GetComponent<TextMeshProUGUI>();
-    }
-    protected virtual IEnumerator PrintText(string text, float speed)
-    {
-        string realText = null;
+        string realText = Tmp.text;
+        string ifstring = (Tmp.text + text);
         int value = 0;
-        while (realText != text)
+        while (realText != ifstring)
         {
             realText += text[value];
             Tmp.text = realText;
