@@ -37,7 +37,7 @@ public class Character : TextPrint
     bool isCriminal;
     bool NewsIssue;
     public CharacterEnum type;
-    public CharacterEnum[] Criminal;
+    public List<CharacterEnum> Criminal;
 
 
     [SerializeField] int recipe;
@@ -66,7 +66,7 @@ public class Character : TextPrint
         {
             if (Random.Range(0, customer - 1) == 0)
             {
-                Criminal[Criminal.Length + 1] = (CharacterEnum)i;
+                Criminal.Add((CharacterEnum)i);
             }
         }
     }
@@ -117,18 +117,19 @@ public class Character : TextPrint
     }
     IEnumerator Chat()
     {
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.025f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.025f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 0 : 1], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 0 : 1], 0.025f));
         canComplte = true;
     }
 
     public void Complete()
     {
+        Day.Instance.customerCount++;
         TextBar.text = printData[(int)type].SuccedOrFail[0];
         StartCoroutine(Evade());
     }
@@ -144,13 +145,13 @@ public class Character : TextPrint
         while (ChracterBorad.color.a > 0f)
         {
             ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a - 0.01f);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
         RandSituation();
         while (ChracterBorad.color.a < 1)
         {
             ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a + 0.01f);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
         }
         StartCoroutine(Chat());
     }
