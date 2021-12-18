@@ -16,10 +16,13 @@ public class Day : Singleton<Day>
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
 
-    protected override void Awake() { }
-    void Start()
+    protected override void Awake()
     {
         CustomerComing();
+    }
+    void Start()
+    {
+
     }
 
     private void Update()
