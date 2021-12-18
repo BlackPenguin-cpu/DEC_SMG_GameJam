@@ -13,7 +13,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
 {
 
     public PowderAmount thisPowderAmount;
-    public List<GaugeStatus> thisGaugeStatus = new List<GaugeStatus>();
+    public List<int> thisGaugeStatus = new List<int>();
     public bool Packed;
 
     int point;
@@ -61,7 +61,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
         // 뉴스나 뭐시기들
     }
 
-    public void SubmitValue(PowderAmount _thisPowder, GaugeStatus[] _thisGauge, bool _Packed)
+    public void SubmitValue(PowderAmount _thisPowder, int[] _thisGauge, bool _Packed)
     {
         thisPowderAmount = _thisPowder;
 
@@ -74,7 +74,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
         Packed = _Packed;
     }
 
-    public int CheckValue(PowderAmount _checkPowder, GaugeStatus[] _checkGauge, bool _checkPacked)
+    public int CheckValue(PowderAmount _checkPowder, int[] _checkGauge, bool _checkPacked)
     {
         point = 0;
 
