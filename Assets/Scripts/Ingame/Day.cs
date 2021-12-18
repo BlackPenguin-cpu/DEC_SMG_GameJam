@@ -71,6 +71,7 @@ public class Day : Singleton<Day>
                 i--;
             }
         }
+        character.NewsPaperReboot();
         character.RandSituation();
     }
 }
