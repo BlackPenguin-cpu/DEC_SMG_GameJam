@@ -10,6 +10,10 @@ public class NewsController : MonoBehaviour
     public List<string> NewsText = new List<string>();
     public int curIdx;
 
+    public List<CharacterEnum> CurCharacters = new List<CharacterEnum>();
+    public List<Sprite> NowUseSprite = new List<Sprite>();
+    public List<string> NowUseText = new List<string>();
+
     [Header("Next")]
     public Image nextImg;
     public Text nextTxt;
@@ -38,6 +42,48 @@ public class NewsController : MonoBehaviour
         }
     }
 
+    public void SetNewCharacters()
+    {
+        CurCharacters.Clear();
+        NowUseSprite.Clear();
+
+        foreach (var item in Day.Instance.customerType)
+        {
+            CurCharacters.Add(item);
+        }
+
+        for (int i = 0; i < CurCharacters.Count; i++)
+        {
+            switch (CurCharacters[i])
+            {
+                case CharacterEnum.COLLEGE:
+                    NowUseSprite.Add(NewsSprite[0]);
+                    break;
+                case CharacterEnum.POPO:
+                    NowUseSprite.Add(NewsSprite[1]);
+                    break;
+                case CharacterEnum.PEPER:
+                    NowUseSprite.Add(NewsSprite[2]);
+                    break;
+                case CharacterEnum.BOYHOOD:
+                    NowUseSprite.Add(NewsSprite[3]);
+                    break;
+                case CharacterEnum.PEACH:
+                    NowUseSprite.Add(NewsSprite[4]);
+                    break;
+                case CharacterEnum.SCHOOLOLD:
+                    NowUseSprite.Add(NewsSprite[5]);
+                    break;
+                case CharacterEnum.SCHOOLYOUNG:
+                    NowUseSprite.Add(NewsSprite[6]);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+
     public void NextNews()
     {
         anim.SetBool("IsPass", true);
@@ -46,22 +92,22 @@ public class NewsController : MonoBehaviour
     public void InitializeNews()
     {
 
-        if(curIdx > NewsSprite.Count - 1)
+        if(curIdx > NowUseSprite.Count - 1)
         {
             curIdx = 0;
         }
 
-        curImg.sprite = NewsSprite[curIdx];
+        curImg.sprite = NowUseSprite[curIdx];
         curTxt.text = NewsText[curIdx];
 
-        if(curIdx + 1 > NewsSprite.Count - 1)
+        if(curIdx + 1 > NowUseSprite.Count - 1)
         {
-            nextImg.sprite = NewsSprite[0];
+            nextImg.sprite = NowUseSprite[0];
             nextTxt.text = NewsText[0];
         }
         else
         {
-            nextImg.sprite = NewsSprite[curIdx + 1];
+            nextImg.sprite = NowUseSprite[curIdx + 1];
             nextTxt.text = NewsText[curIdx + 1];
         }
 
