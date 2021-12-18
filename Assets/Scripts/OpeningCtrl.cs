@@ -36,7 +36,7 @@ public class OpeningCtrl : MonoBehaviour
             WhiteImg[i].color = color;
         }
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("TitleScene");
         yield return null;
     }
 }
