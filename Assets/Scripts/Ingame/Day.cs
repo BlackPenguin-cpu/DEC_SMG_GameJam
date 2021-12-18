@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Day : Singleton<Day>
 {
@@ -15,7 +16,8 @@ public class Day : Singleton<Day>
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
 
-    protected override void Awake()
+    protected override void Awake() { }
+    void Start()
     {
         CustomerComing();
     }
@@ -44,6 +46,18 @@ public class Day : Singleton<Day>
             BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a + 0.01f);
             yield return new WaitForSeconds(0.01f);
         }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    IEnumerator GameOver()
+    {
+        BigDaytext.gameObject.SetActive(true);
+        while (BlackScreen.color.a > 0)
+        {
+            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a - 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        BigDaytext.text = "GAME OVER...";
+        SceneManager.LoadScene("TitleScene");
 
     }
     void CustomerComing()
@@ -71,7 +85,8 @@ public class Day : Singleton<Day>
                 i--;
             }
         }
-        character.NewsPaperReboot();
+        customerCount = 0;
         character.RandSituation();
+        character.NewsPaperReboot();
     }
 }
