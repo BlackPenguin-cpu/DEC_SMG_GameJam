@@ -5523,7 +5523,7 @@ MonoBehaviour:
   type: 0
   Criminal: 0
   recipe: 0
-  Gaugerecipe: 0000000000000000000000000000000000000000
+  Gaugerecipe: 000000000000000000000000000000000000000000000000
   powder: 0
   package: 0
   TextBar: {fileID: 1014930493}
