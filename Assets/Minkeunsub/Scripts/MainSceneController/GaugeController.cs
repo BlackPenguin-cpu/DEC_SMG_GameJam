@@ -7,14 +7,14 @@ public class GaugeController : MonoBehaviour
 {
 
     public Image Gauge;
-    public int maxValue = 100;
-    public int curValue;
+    public float maxValue = 100;
+    public float curValue;
 
     public float delay = 0;
     
     void Start()
     {
-        
+        curValue = maxValue;
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class GaugeController : MonoBehaviour
         }
     }
 
-    public void DecreaseValue(int _value)
+    public void DecreaseValue(float _value)
     {
         curValue -= _value;
     }

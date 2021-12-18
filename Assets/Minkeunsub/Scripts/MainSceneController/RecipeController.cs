@@ -41,7 +41,7 @@ public class RecipeController : Singleton<RecipeController>
     {
         anim = GetComponent<Animator>();
         SetRecipeDesc(0);
-        InitAllStatus();
+        InitAllStatus(false);
     }
 
     void Update()
@@ -55,7 +55,7 @@ public class RecipeController : Singleton<RecipeController>
         {
             if (curGaugeIndex == maxGaugeIndex)
             {
-                InitAllStatus();
+                InitAllStatus(true);
             }
             else
             {
@@ -65,7 +65,7 @@ public class RecipeController : Singleton<RecipeController>
         }
     }
 
-    public void InitAllStatus()
+    public void InitAllStatus(bool eventActive)
     {
         for (int i = 0; i < recipeGauges.Length; i++)
         {
@@ -73,7 +73,9 @@ public class RecipeController : Singleton<RecipeController>
             gaugeStatus[i] = GaugeStatus.NONE;
             curGaugeIndex = 0;
         }
-        anim.SetBool("IsEvent", true);
+
+        if (eventActive)
+            anim.SetBool("IsEvent", true);
     }
 
     public void EndEvent()

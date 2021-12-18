@@ -30,6 +30,11 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
 
     public GameState InGameState;
 
+    protected override void Awake()
+    {
+        
+    }
+
     void Start()
     {
         
@@ -44,10 +49,16 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
             case GameState.GameOver:
                 break;
             case GameState.GameEnd:
+                GameEndEvent();
                 break;
             default:
                 break;
         }
+    }
+
+    public void GameEndEvent()
+    {
+        // 뉴스나 뭐시기들
     }
 
     public void SubmitValue(PowderAmount _thisPowder, GaugeStatus[] _thisGauge, bool _Packed)

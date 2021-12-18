@@ -38,17 +38,26 @@ public class SelectController : Singleton<SelectController>
 
     public void SelectPowderAmount(int n)
     {
-        for (int i = 0; i < powderAmountSelect.Length; i++)
-        {
-            powderAmountSelect[i].image.color = new Color(1, 1, 1, 1);
-        }
+        InitializeButtons();
 
         powderAmountSelect[n].image.color = new Color(0, 0, 0, 1);
         curPowderAmount = (PowderAmount)n;
     }
 
+    public void InitializeButtons()
+    {
+        for (int i = 0; i < powderAmountSelect.Length; i++)
+        {
+            powderAmountSelect[i].image.color = new Color(1, 1, 1, 1);
+        }
+    }
+
     public void Compelete()
     {
+        Packing = false;
+        InitializeButtons();
+        PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
+        RecipeController.Instance.InitAllStatus(false);
         // npc 조건과 비교
     }
 
