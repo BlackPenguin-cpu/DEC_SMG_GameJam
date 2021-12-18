@@ -98,9 +98,7 @@ public class Character : TextPrint
     }
     IEnumerator Chat()
     {
-        Debug.Log("asdff");
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
-        Debug.Log("asd");
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder], 0.05f));
