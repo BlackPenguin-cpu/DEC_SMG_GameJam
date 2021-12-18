@@ -59,7 +59,7 @@ public class Character : TextPrint
         StartCoroutine(Chat());
     }
 
-    string NewsPaperReboot()
+    void NewsPaperReboot()
     {
         int customer = Day.Instance.customer;
 
@@ -70,9 +70,6 @@ public class Character : TextPrint
                 Criminal[Criminal.Length + 1] = (CharacterEnum)i;
             }
         }
-
-
-        return "asd";
     }
     public bool SuccedCheck()
     {
