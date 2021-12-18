@@ -108,7 +108,18 @@ public class Character : TextPrint
     void RandSituation()
     {
         TextBar.text = "";
-        type = (CharacterEnum)Random.Range(0, 7);
+        while (true)
+        {
+            type = (CharacterEnum)Random.Range(0, 7);
+            foreach (CharacterEnum value in Day.Instance.customerType)
+            {
+                if (value != type)
+                {
+                    goto EXIT;
+                }
+            }
+        }
+        EXIT:
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
         powder = (PowderAmount)Random.Range(1, 4);
