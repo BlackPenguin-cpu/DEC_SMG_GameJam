@@ -55,7 +55,6 @@ public class Character : TextPrint
     public bool canComplte;
     private void Start()
     {
-        RandSituation();
         StartCoroutine(Chat());
     }
 
@@ -105,13 +104,13 @@ public class Character : TextPrint
         }
     }
 
-    void RandSituation()
+    public void RandSituation()
     {
         TextBar.text = "";
         while (true)
         {
             type = (CharacterEnum)Random.Range(0, 7);
-            if (!Day.Instance.customerType.Contains((CharacterEnum)type)) break;
+            if (Day.Instance.customerType.Contains(type)) break;
         }
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
