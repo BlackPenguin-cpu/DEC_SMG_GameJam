@@ -378,7 +378,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e3a767c9bf8bf4c9d6504aef2c20b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   TextBar: {fileID: 1799975403}
+  printData:
+  - Order:
+    - "\uC544\uC800\uC528! \uC800 \uC608\uC804\uC5D0 \uB9D0\uD55C \uADF8 \uCE5C\uAD6C\uC640
+      \uC798\uB410\uC5B4\uC694! \uB0A8\uC790\uCE5C\uAD6C\uB791 \uB180\uB7EC\uAC00\uC11C
+      \uC4F8 \uD3ED\uC8FD\uC774 \uD544\uC694\uD574\uC694!"
+    - 
+    - 
+    - 
+    - 
+    - 
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
+  - Order: []
+    BlackPowder: []
+    Package: []
 --- !u!114 &1466377588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,19 +576,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 40
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

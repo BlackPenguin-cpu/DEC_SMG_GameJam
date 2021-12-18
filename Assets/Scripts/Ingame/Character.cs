@@ -17,8 +17,11 @@ public enum CharacterEnum
 [System.Serializable]
 public struct PrintData
 {
+    [TextArea]
     public string[] Order;
+    [TextArea]
     public string[] BlackPowder;
+    [TextArea]
     public string[] Package;
 }
 
@@ -28,26 +31,30 @@ public class Character : TextPrint
     bool NewsIssue;
     public CharacterEnum type;
 
-    List<GaugeStatus> recipe;
+    int recipe;
+    List<GaugeStatus> Gaugerecipe;
     PowderAmount powder;
     bool package;
 
     public TextMeshProUGUI TextBar;
 
+    Sprite[] ChracterSprite;
+    SpriteRenderer ChracterBorad;
+
     public List<PrintData> printData;
     int point;
     private void Start()
     {
-        StartCoroutine(PrintText(TextBar, printData[0].Order[0], 0.05f));
         RandSituation();
-        //StartCoroutine(Chat());
+        StartCoroutine(Chat());
     }
+
 
     public bool SuccedCheck()
     {
-        point = MainSceneUIController.Instance.CheckValue(powder, recipe.ToArray(), package);
+        point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe.ToArray(), package);
         int checkPoint = 0;
-        foreach (GaugeStatus value in recipe)
+        foreach (GaugeStatus value in Gaugerecipe)
         {
             checkPoint += (int)value;
         }
@@ -68,25 +75,26 @@ public class Character : TextPrint
 
     void RandSituation()
     {
-        int randrecipe = Random.Range(0, 6);
+        type = (CharacterEnum)Random.Range(0, 7);
+        int recipe = Random.Range(0, 6);
         for (int i = 0; i < 4; i++)
         {
-            recipe[i] = (GaugeStatus)MainSceneUIController.Instance.recipe[randrecipe, i];
+            Gaugerecipe[i] = (GaugeStatus)MainSceneUIController.Instance.recipe[recipe, i];
         }
         powder = (PowderAmount)Random.Range(0, 5);
         package = Random.Range(0, 2) == 1 ? true : false;
     }
-    //IEnumerator Chat()
-    //{
-    //    Debug.Log("asdff");
-    //    yield return StartCoroutine(PrintText(TextBar, Order[0][0], 0.05f));
-    //    Debug.Log("asd");
-    //    yield return new WaitForSeconds(0.1f);
-    //    TextBar.text += "\n";
-    //    yield return StartCoroutine(PrintText(TextBar, BlackPowder[(int)powder][Random.Range(0, BlackPowder.Length)], 0.05f));
-    //    yield return new WaitForSeconds(0.1f);
-    //    TextBar.text += "\n";
-    //    yield return StartCoroutine(PrintText(TextBar, Package[package ? 1 : 0][Random.Range(0, Package.Length)], 0.05f));
-    //}
+    IEnumerator Chat()
+    {
+        Debug.Log("asdff");
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
+        Debug.Log("asd");
+        yield return new WaitForSeconds(0.1f);
+        TextBar.text += "\n";
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder], 0.05f));
+        yield return new WaitForSeconds(0.1f);
+        TextBar.text += "\n";
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 1 : 0], 0.05f));
+    }
 
 }
