@@ -22,12 +22,12 @@ public class SelectController : Singleton<SelectController>
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void SelectPacking()
@@ -55,30 +55,34 @@ public class SelectController : Singleton<SelectController>
 
     public void Compelete()
     {
-        List<int> temp = new List<int>();
-        foreach (var item in RecipeController.Instance.gaugeStatus)
+        if (NPC_Info.canComplte)
         {
-            temp.Add((int)item);
-        }
 
-        MainSceneUIController.Instance.SubmitValue(curPowderAmount, temp.ToArray(), Packing);
+            List<int> temp = new List<int>();
+            foreach (var item in RecipeController.Instance.gaugeStatus)
+            {
+                temp.Add((int)item);
+            }
+
+            MainSceneUIController.Instance.SubmitValue(curPowderAmount, temp.ToArray(), Packing);
 
 
-        Packing = false;
-        InitializeButtons();
-        PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
-        RecipeController.Instance.InitAllStatus(false);
-        // npc 조건과 비교
+            Packing = false;
+            InitializeButtons();
+            PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
+            RecipeController.Instance.InitAllStatus(false);
+            // npc 조건과 비교
 
-        if (NPC_Info.SuccedCheck())
-        {
-            NPC_Info.Complete();
-        }
-        else
-        {
-            NPC_Info.Fail();
+            if (NPC_Info.SuccedCheck())
+            {
+                NPC_Info.Complete();
+            }
+            else
+            {
+                NPC_Info.Fail();
+            }
         }
     }
 
-    
+
 }
