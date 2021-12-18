@@ -39,7 +39,7 @@ public class Character : TextPrint
 
 
     int recipe;
-    GaugeStatus[] Gaugerecipe;
+    int[] Gaugerecipe = new int[5];
     PowderAmount powder;
     bool package;
 
@@ -53,7 +53,6 @@ public class Character : TextPrint
     private void Start()
     {
         RandSituation();
-        SuccedCheck();
         StartCoroutine(Chat());
     }
 
@@ -74,9 +73,9 @@ public class Character : TextPrint
 
         point = MainSceneUIController.Instance.CheckValue(powder, temp.ToArray(), package);
         int checkPoint = 0;
-        foreach (GaugeStatus value in Gaugerecipe)
+        foreach (int value in Gaugerecipe)
         {
-            checkPoint += (int)value;
+            checkPoint += value;
         }
         checkPoint += 2;
         if (point != checkPoint)
@@ -102,7 +101,7 @@ public class Character : TextPrint
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 4; i++)
         {
-            Gaugerecipe[i] = (GaugeStatus)MainSceneUIController.recipe[recipe, i];
+            Gaugerecipe[i] = MainSceneUIController.recipe[recipe, i];
             Debug.Log(Gaugerecipe[i]);
         }
     }
