@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameTxt: {fileID: 1222928362}
   scriptTxt: {fileID: 1905693874}
+  fadeOutPanel: {fileID: 1469056637}
 --- !u!1 &1469056637
 GameObject:
   m_ObjectHideFlags: 0
