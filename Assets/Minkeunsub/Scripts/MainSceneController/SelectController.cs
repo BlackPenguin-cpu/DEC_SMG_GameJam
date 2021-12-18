@@ -54,7 +54,14 @@ public class SelectController : Singleton<SelectController>
 
     public void Compelete()
     {
+        List<int> temp = new List<int>();
+        foreach (var item in RecipeController.Instance.gaugeStatus)
+        {
+            temp.Add((int)item);
+            Debug.Log(item);
+        }
 
+        MainSceneUIController.Instance.SubmitValue(curPowderAmount, temp.ToArray(), Packing);
 
 
         Packing = false;
