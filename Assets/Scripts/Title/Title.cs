@@ -10,9 +10,6 @@ public class Title : MonoBehaviour
     public GameObject howToPanel;
     public GameObject fadeOutPanel;
     FadeInOut fadeInOut;
-    bool startGame = false;
-
-    float timer = 0f;
 
     private void Awake()
     {
@@ -27,21 +24,23 @@ public class Title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startGame)
-        {
-            while(timer < 5f)
-                timer += Time.deltaTime;
-            Debug.Log("STARG GAME");
-            //¾À ÀÌµ¿
-            SceneManager.LoadScene("SampleScene");
-        }
     }
+
+    
 
     public void StargGame()
     {
         btnSound.Play();
         fadeInOut.TryFadeOut();
-        startGame = true;
+        StartCoroutine("MoveToInGame");
+    }
+
+    IEnumerator MoveToInGame()
+    {
+        yield return new WaitForSeconds(2f);
+        //¾À ÀÌµ¿
+        SceneManager.LoadScene("SampleScene");
+
     }
 
     public void ShowDeveloperPanel()
