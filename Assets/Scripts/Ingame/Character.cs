@@ -58,7 +58,7 @@ public class Character : TextPrint
         StartCoroutine(Chat());
     }
 
-    void NewsPaperReboot()
+    public void NewsPaperReboot()
     {
         int customer = Day.Instance.customer;
 
