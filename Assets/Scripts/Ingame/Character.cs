@@ -65,7 +65,14 @@ public class Character : TextPrint
     }
     public bool SuccedCheck()
     {
-        point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe, package);
+
+        List<int> temp = new List<int>();
+        foreach (var item in Gaugerecipe)
+        {
+            temp.Add((int)item);
+        }
+
+        point = MainSceneUIController.Instance.CheckValue(powder, temp.ToArray(), package);
         int checkPoint = 0;
         foreach (GaugeStatus value in Gaugerecipe)
         {
@@ -95,7 +102,7 @@ public class Character : TextPrint
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 4; i++)
         {
-            Gaugerecipe[i] = (GaugeStatus)MainSceneUIController.Instance.recipe[recipe, i];
+            Gaugerecipe[i] = (GaugeStatus)MainSceneUIController.recipe[recipe, i];
             Debug.Log(Gaugerecipe[i]);
         }
     }
