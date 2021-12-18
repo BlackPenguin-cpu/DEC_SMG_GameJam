@@ -10,24 +10,45 @@ public class Day : Singleton<Day>
     public int customer;
     public CharacterEnum[] customerType;
     public int customerCount;
-    public TextMeshProUGUI TMP;
+    public TextMeshProUGUI Daytext;
+    public Image BlackScreen;
+    public TextMeshProUGUI BigDaytext;
 
     void Start()
     {
         CustomerComing();
     }
 
-    void Update()
+    private void Update()
     {
-        if(customerCount >= (day+2 > 8? 8 : day + 2))
+        if (customerCount >= (day + 2 > 8 ? 8 : day + 2))
         {
-            Debug.Log("Clear");
+            StartCoroutine(DaynextDay());
         }
+    }
+    IEnumerator DaynextDay()
+    {
+
+        Debug.Log("Clear");
+        BigDaytext.gameObject.SetActive(true);
+        while (BlackScreen.color.a > 0)
+        {
+            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a - 0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        BigDaytext.text = "Day" + day;
+        yield return new WaitForSeconds(1);
+        while (BlackScreen.color.a < 1)
+        {
+            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a +0.01f);
+            yield return new WaitForSeconds(0.01f);
+        }
+
     }
     void CustomerComing()
     {
         day++;
-        TMP.text = "Day " + day;
+        Daytext.text = "Day " + day;
         if (day + 2 > 8)
         {
             customer = 8;
