@@ -87,7 +87,7 @@ public class RecipeController : Singleton<RecipeController>
     {
         if (curGaugeIndex < maxGaugeIndex)
         {
-            recipeGauges[curGaugeIndex].color = gauge_colors[(int)state];
+            recipeGauges[curGaugeIndex].color = gauge_colors[state - 1];
             gaugeStatus[curGaugeIndex] = (GaugeStatus)state;
             curGaugeIndex++;
         }
