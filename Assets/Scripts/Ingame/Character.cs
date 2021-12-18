@@ -111,15 +111,8 @@ public class Character : TextPrint
         while (true)
         {
             type = (CharacterEnum)Random.Range(0, 7);
-            foreach (CharacterEnum value in Day.Instance.customerType)
-            {
-                if (value != type)
-                {
-                    goto EXIT;
-                }
-            }
+            if (!Day.Instance.customerType.Contains((CharacterEnum)type)) break;
         }
-        EXIT:
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
         powder = (PowderAmount)Random.Range(1, 4);
@@ -155,7 +148,7 @@ public class Character : TextPrint
     {
         canComplte = false;
         yield return new WaitForSeconds(1);
-        while (ChracterBorad.color.a >= 0f)
+        while (ChracterBorad.color.a > 0f)
         {
             ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a - 0.01f);
             yield return new WaitForSeconds(0.02f);
