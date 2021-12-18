@@ -103,7 +103,7 @@ public class Character : TextPrint
         TextBar.text = "";
         while (true)
         {
-            type = (CharacterEnum)Random.Range(0, Day.Instance.customerType.Count);
+            type = (CharacterEnum)Random.Range(0, 7);
             if (Day.Instance.customerType.Contains(type))
             {
                 ChracterBorad.sprite = ChracterSprite[(int)type];
