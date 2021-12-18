@@ -8,6 +8,7 @@ public class NewsController : MonoBehaviour
     Animator anim;
     public List<Sprite> NewsSprite = new List<Sprite>();
     public List<string> NewsText = new List<string>();
+    public List<string> CriminalText = new List<string>();
     public int curIdx;
 
     public List<CharacterEnum> CurCharacters = new List<CharacterEnum>();
