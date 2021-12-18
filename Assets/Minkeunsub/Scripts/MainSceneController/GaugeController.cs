@@ -25,12 +25,15 @@ public class GaugeController : MonoBehaviour
 
     public void TimeGaugeLogic()
     {
-        if(delay >= 1)
+        if(MainSceneUIController.Instance.InGameState == GameState.GameInProgress)
         {
-            DecreaseValue(1);
-            delay = 0;
+            if (delay >= 1)
+            {
+                DecreaseValue(1);
+                delay = 0;
+            }
+            delay += Time.deltaTime;
         }
-        delay += Time.deltaTime;
     }
 
     public void DecreaseValue(int _value)
