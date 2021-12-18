@@ -11,7 +11,7 @@ public enum PowderAmount
     FULL
 }
 
-public class SelectController : MonoBehaviour
+public class SelectController : Singleton<SelectController>
 {
     public PowderAmount curPowderAmount;
     public Button[] powderAmountSelect;

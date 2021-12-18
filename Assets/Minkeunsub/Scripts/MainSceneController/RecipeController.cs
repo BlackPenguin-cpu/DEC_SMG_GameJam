@@ -23,8 +23,8 @@ public class RecipeController : Singleton<RecipeController>
     public Image[] recipeGauges;
 
     [Header("Sprites")]
-    public Sprite[] idleSprite;
-    public Sprite[] selectedSprite;
+    public Sprite idleSprite;
+    public Sprite selectedSprite;
 
     [Header("Gauge")]
     public Color[] gauge_colors = new Color[4];
@@ -95,11 +95,11 @@ public class RecipeController : Singleton<RecipeController>
     {
         for (int i = 0; i < recipeDesces.Length; i++)
         {
-            recipeButtons[i].image.sprite = idleSprite[i];
+            recipeButtons[i].image.sprite = idleSprite;
             recipeDesces[i].gameObject.SetActive(false);
         }
 
-        recipeButtons[n].image.sprite = selectedSprite[n];
+        recipeButtons[n].image.sprite = selectedSprite;
         recipeDesces[n].gameObject.SetActive(true);
     }
 }
