@@ -47,6 +47,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
             case GameState.GameInProgress:
                 break;
             case GameState.GameOver:
+                Day.Instance.StartCoroutine(Day.Instance.GameOver());
                 break;
             case GameState.GameEnd:
                 GameEndEvent();
@@ -58,6 +59,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
 
     public void GameEndEvent()
     {
+        Day.Instance.StartCoroutine(Day.Instance.DaynextDay());
         // 뉴스나 뭐시기들
     }
 

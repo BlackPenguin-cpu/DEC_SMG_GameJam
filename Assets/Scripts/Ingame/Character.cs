@@ -103,10 +103,14 @@ public class Character : TextPrint
         TextBar.text = "";
         while (true)
         {
-            type = (CharacterEnum)Random.Range(0, 7);
-            if (Day.Instance.customerType.Contains(type)) break;
+            type = (CharacterEnum)Random.Range(0, Day.Instance.customerType.Count);
+            if (Day.Instance.customerType.Contains(type))
+            {
+                ChracterBorad.sprite = ChracterSprite[(int)type];
+                Day.Instance.customerType.Remove(type);
+                break;
+            }
         }
-        ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
         powder = (PowderAmount)Random.Range(1, 4);
         package = Random.Range(0, 2) == 1 ? true : false;
