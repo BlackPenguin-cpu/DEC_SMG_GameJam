@@ -4320,10 +4320,12 @@ MonoBehaviour:
   - hjklhjklhjklhjljh
   - zxcvzxcvzxcvzxs
   - zxcvzxcvzxcvzxs
+  CriminalText: []
   curIdx: 0
   CurCharacters: 
   NowUseSprite: []
   NowUseText: []
+  character: {fileID: 1455704781}
   nextImg: {fileID: 273576820}
   nextTxt: {fileID: 575578724}
   curImg: {fileID: 1103580090}

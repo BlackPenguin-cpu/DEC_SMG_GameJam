@@ -15,6 +15,8 @@ public class NewsController : MonoBehaviour
     public List<Sprite> NowUseSprite = new List<Sprite>();
     public List<string> NowUseText = new List<string>();
 
+    public Character character;
+
     [Header("Next")]
     public Image nextImg;
     public Text nextTxt;
@@ -84,6 +86,28 @@ public class NewsController : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < character.Criminal.Length; i++)
+        {
+            switch (character.Criminal[i])
+            {
+                case CharacterEnum.COLLEGE:
+                    break;
+                case CharacterEnum.POPO:
+                    break;
+                case CharacterEnum.PEPER:
+                    break;
+                case CharacterEnum.BOYHOOD:
+                    break;
+                case CharacterEnum.PEACH:
+                    break;
+                case CharacterEnum.SCHOOLOLD:
+                    break;
+                case CharacterEnum.SCHOOLYOUNG:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void NextNews()
@@ -100,17 +124,17 @@ public class NewsController : MonoBehaviour
         }
 
         curImg.sprite = NowUseSprite[curIdx];
-        curTxt.text = NewsText[curIdx];
+        curTxt.text = NowUseText[curIdx];
 
         if(curIdx + 1 > NowUseSprite.Count - 1)
         {
             nextImg.sprite = NowUseSprite[0];
-            nextTxt.text = NewsText[0];
+            nextTxt.text = NowUseText[0];
         }
         else
         {
             nextImg.sprite = NowUseSprite[curIdx + 1];
-            nextTxt.text = NewsText[curIdx + 1];
+            nextTxt.text = NowUseText[curIdx + 1];
         }
 
     }

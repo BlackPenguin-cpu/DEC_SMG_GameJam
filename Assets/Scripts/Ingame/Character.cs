@@ -73,13 +73,7 @@ public class Character : TextPrint
     public bool SuccedCheck()
     {
 
-        List<int> temp = new List<int>();
-        foreach (var item in Gaugerecipe)
-        {
-            temp.Add((int)item);
-        }
-
-        point = MainSceneUIController.Instance.CheckValue(powder, temp.ToArray(), package);
+        point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe, package);
         int checkPoint = 0;
         foreach (int value in Gaugerecipe)
         {

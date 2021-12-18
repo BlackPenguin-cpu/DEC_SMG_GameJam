@@ -15,7 +15,7 @@ public class Day : Singleton<Day>
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
 
-    void Awake()
+    protected override void Awake()
     {
         CustomerComing();
     }
