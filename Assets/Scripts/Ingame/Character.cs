@@ -23,6 +23,8 @@ public struct PrintData
     public string[] BlackPowder;
     [TextArea]
     public string[] Package;
+    [TextArea]
+    public string[] SuccedOrFail;
 }
 [System.Serializable]
 public struct NewText
@@ -39,7 +41,7 @@ public class Character : TextPrint
 
 
     [SerializeField] int recipe;
-    [SerializeField]  int[] Gaugerecipe = new int[5];
+    [SerializeField]  int[] Gaugerecipe = new int[6];
     [SerializeField] PowderAmount powder;
     [SerializeField] bool package;
 
@@ -97,7 +99,7 @@ public class Character : TextPrint
         type = (CharacterEnum)Random.Range(0, 7);
         ChracterBorad.sprite = ChracterSprite[(int)type];
         recipe = Random.Range(0, 6);
-        powder = (PowderAmount)Random.Range(0, 5);
+        powder = (PowderAmount)Random.Range(1, 5);
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 4; i++)
         {
@@ -110,7 +112,7 @@ public class Character : TextPrint
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder], 0.05f));
+        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder-1], 0.05f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 1 : 0], 0.05f));
