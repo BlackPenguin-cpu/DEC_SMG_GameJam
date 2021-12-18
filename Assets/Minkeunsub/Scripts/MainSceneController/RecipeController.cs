@@ -14,6 +14,9 @@ public enum GaugeStatus
 
 public class RecipeController : Singleton<RecipeController>
 {
+
+    Animator anim;
+
     [Header("Gameobjects")]
     public Button[] recipeButtons;
     public Image[] recipeDesces;
@@ -36,6 +39,7 @@ public class RecipeController : Singleton<RecipeController>
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         SetRecipeDesc(0);
         InitAllStatus();
     }
@@ -69,6 +73,12 @@ public class RecipeController : Singleton<RecipeController>
             gaugeStatus[i] = GaugeStatus.NONE;
             curGaugeIndex = 0;
         }
+        anim.SetBool("IsEvent", true);
+    }
+
+    public void EndEvent()
+    {
+        anim.SetBool("IsEvent", false);
     }
 
     public void SelectGauge(int state)
