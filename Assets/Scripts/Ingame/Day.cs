@@ -28,8 +28,9 @@ public class Day : Singleton<Day>
 
     private void Update()
     {
-        if (customerCount >= (day + 2 > 7 ? 7 : day + 2))
+        if (customerCount >= (day + 2 >= 7 ? 7 : day + 2))
         {
+            customerCount = 0;
             StartCoroutine(DaynextDay());
         }
     }
@@ -39,7 +40,6 @@ public class Day : Singleton<Day>
         int clearDay = PlayerPrefs.GetInt("ClearDayCount");
         PlayerPrefs.SetInt("ClearDayCount", clearDay + 1);
 
-        customerCount = 0;
         Time.timeScale = 0;
         while (BlackScreen.color.a < 1)
         {
@@ -67,7 +67,7 @@ public class Day : Singleton<Day>
         while (BlackScreen.color.a > 0)
         {
             BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a - 0.01f);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
         Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
@@ -81,6 +81,7 @@ public class Day : Singleton<Day>
     void CustomerComing()
     {
         day++;
+        customerType.Clear();
         Daytext.text = "Day " + day;
         if (day + 2 > 7)
         {
@@ -90,22 +91,33 @@ public class Day : Singleton<Day>
         {
             customer = day + 2;
         }
-        for (int i = 0; i < customer; i++)
+        if (day >= 7)
         {
-            int Character = Random.Range(0, 7);
-
-            if (!customerType.Contains((CharacterEnum)Character))
+            for (int i = 0; i < 7; i++)
             {
-                customerType.Add((CharacterEnum)Character);
+                customerType.Add((CharacterEnum)i);
             }
-            else
+        }
+        else
+        {
+
+            for (int i = 0; i < customer; i++)
             {
-                i--;
+                int Character = Random.Range(0, 7);
+
+                if (!customerType.Contains((CharacterEnum)Character))
+                {
+                    customerType.Add((CharacterEnum)Character);
+                }
+                else
+                {
+                    i--;
+                }
             }
         }
         customerCount = 0;
         CustomerList = customerType.ToList();
         character.RandSituation();
-        character.NewsPaperReboot();
+        //character.NewsPaperReboot();
     }
 }
