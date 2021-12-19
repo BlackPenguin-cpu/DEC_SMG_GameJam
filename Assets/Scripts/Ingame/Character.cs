@@ -75,6 +75,7 @@ public class Character : TextPrint
         for (int i = 0; i < Criminal.Count; i++)
         {
             Criminal[i] = Day.Instance.CustomerList[(int)Criminal[i]];
+            Debug.Log(Criminal[i]);
         }
     }
     public bool SuccedCheck()
