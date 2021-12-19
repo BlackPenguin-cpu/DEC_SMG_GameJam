@@ -20,6 +20,11 @@ public class OpeningCtrl : MonoBehaviour
         
     }
 
+    public void SkipBtn()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
     IEnumerator ShowOpening()
     {
         Color color;
