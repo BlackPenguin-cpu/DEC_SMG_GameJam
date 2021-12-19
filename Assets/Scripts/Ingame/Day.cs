@@ -20,6 +20,7 @@ public class Day : Singleton<Day>
 
     protected override void Awake()
     {
+
         day = GameManager.Instance.Day;
         Daytext.text = "Day " + day;
         CustomerComing();
