@@ -121,10 +121,14 @@ public class Character : TextPrint
         {
             powder = PowderAmount.NONE;
         }
-        else
-            powder = (PowderAmount)Random.Range(1, 4);
+        else powder = (PowderAmount)Random.Range(2, 5);
 
-        package = Random.Range(0, 2) == 1 ? true : false;
+        if (Criminal.Contains(type))
+        {
+            package = true;
+        }
+        else
+            package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 6; i++)
         {
             Gaugerecipe[i] = MainSceneUIController.recipe[recipe, i];
@@ -149,6 +153,12 @@ public class Character : TextPrint
 
     public void Complete()
     {
+        if (GaugeController.Instance.curValue +10 > 100)
+        {
+            GaugeController.Instance.curValue = 100; 
+        }
+        else
+        GaugeController.Instance.curValue += 10;
         TextBar.text = printData[(int)type].SuccedOrFail[0];
         StartCoroutine(Evade());
     }
@@ -160,7 +170,9 @@ public class Character : TextPrint
             TextBar.text = printData[(int)type].SuccedOrFail[0];
         }
         else
+        {
             TextBar.text = printData[(int)type].SuccedOrFail[1];
+        }
         StartCoroutine(Evade());
     }
     IEnumerator Evade()

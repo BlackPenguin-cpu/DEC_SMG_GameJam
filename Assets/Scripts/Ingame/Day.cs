@@ -48,6 +48,7 @@ public class Day : Singleton<Day>
         BigDaytext.gameObject.SetActive(true);
         BigDaytext.text = "Day" + (day + 1);
         yield return new WaitForSecondsRealtime(2);
+        FindObjectOfType<GaugeController>().curValue = 100;
         BigDaytext.gameObject.SetActive(false);
         while (BlackScreen.color.a > 0)
         {
@@ -70,6 +71,7 @@ public class Day : Singleton<Day>
         Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
         yield return new WaitForSecondsRealtime(2);
+        FindObjectOfType<GaugeController>().curValue = 100;
         Time.timeScale = 1;
         BlackScreen.gameObject.SetActive(false);
         SceneManager.LoadScene("EndingScene");
