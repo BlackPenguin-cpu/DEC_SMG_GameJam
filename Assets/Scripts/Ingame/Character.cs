@@ -83,16 +83,17 @@ public class Character : TextPrint
         }
         checkPoint += 2;*/
 
+        if (Criminal.Contains(type) && powder != FindObjectOfType<SelectController>().curPowderAmount)
+        {
+            
+            NewsIssue = true;
+        }
         if (point != checkPoint)
         {
             return false;
         }
         else
         {
-            if (isCriminal)
-            {
-                NewsIssue = true;
-            }
             return true;
         }
     }
@@ -115,7 +116,13 @@ public class Character : TextPrint
             else break;
         }
         recipe = Random.Range(0, 6);
-        powder = (PowderAmount)Random.Range(1, 4);
+        if (Criminal.Contains(type))
+        {
+            powder = PowderAmount.NONE;
+        }
+        else
+            powder = (PowderAmount)Random.Range(1, 4);
+
         package = Random.Range(0, 2) == 1 ? true : false;
         for (int i = 0; i < 6; i++)
         {
