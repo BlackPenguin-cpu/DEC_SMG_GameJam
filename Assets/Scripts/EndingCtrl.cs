@@ -15,19 +15,19 @@ public class EndingCtrl : MonoBehaviour
         fadeInOut = fadeOutPanel.GetComponent<FadeInOut>();
 
         int clearDayCount = PlayerPrefs.GetInt("ClearDayCount");
-        if(clearDayCount <= 7)
+        if(clearDayCount <= 3)
         {
             EndingImgs[0].SetActive(true);
         }
-        else if (clearDayCount <= 14)
+        else if (clearDayCount <= 5)
         {
             EndingImgs[1].SetActive(true);
         }
-        else if (clearDayCount <= 24)
+        else if (clearDayCount <= 9)
         {
             EndingImgs[2].SetActive(true);
         }
-        else if (clearDayCount <= 25)
+        else
         {
             EndingImgs[3].SetActive(true);
         }
