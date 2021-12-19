@@ -93,11 +93,14 @@ public class NewsController : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < character.Criminal.Count; i++)
+        for (int i = 0; i < CurCharacters.Count; i++)
         {
-            if(CurCharacters[i] == character.Criminal[i])
+            for (int j = 0; j < character.Criminal.Count; j++)
             {
-                NowUseText[i] = CriminalText[(int)character.Criminal[i]];
+                if (CurCharacters[i] == character.Criminal[j])
+                {
+                    NowUseText[i] = CriminalText[(int)character.Criminal[i]];
+                }
             }
         }
     }
