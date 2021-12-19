@@ -101,22 +101,22 @@ public class NewsController : MonoBehaviour
                     NowUseText[0] = CriminalText[0];
                     break;
                 case CharacterEnum.POPO:
-                    NowUseText[0] = CriminalText[1];
+                    NowUseText[1] = CriminalText[1];
                     break;
                 case CharacterEnum.PEPER:
-                    NowUseText[0] = CriminalText[2];
+                    NowUseText[2] = CriminalText[2];
                     break;
                 case CharacterEnum.BOYHOOD:
-                    NowUseText[0] = CriminalText[3];
+                    NowUseText[3] = CriminalText[3];
                     break;
                 case CharacterEnum.PEACH:
-                    NowUseText[0] = CriminalText[4];
+                    NowUseText[4] = CriminalText[4];
                     break;
                 case CharacterEnum.SCHOOLOLD:
-                    NowUseText[0] = CriminalText[5];
+                    NowUseText[5] = CriminalText[5];
                     break;
                 case CharacterEnum.SCHOOLYOUNG:
-                    NowUseText[0] = CriminalText[6];
+                    NowUseText[6] = CriminalText[6];
                     break;
                 default:
                     break;
