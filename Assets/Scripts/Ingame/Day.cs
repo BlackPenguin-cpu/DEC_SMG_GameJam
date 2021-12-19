@@ -27,7 +27,7 @@ public class Day : Singleton<Day>
 
     private void Update()
     {
-        if (customerCount >= (day + 2 > 8 ? 8 : day + 2))
+        if (customerCount >= (day + 2 > 7 ? 7 : day + 2))
         {
             StartCoroutine(DaynextDay());
         }
@@ -81,9 +81,9 @@ public class Day : Singleton<Day>
     {
         day++;
         Daytext.text = "Day " + day;
-        if (day + 2 > 8)
+        if (day + 2 > 7)
         {
-            customer = 8;
+            customer = 7;
         }
         else
         {

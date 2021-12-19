@@ -68,6 +68,8 @@ public class Character : TextPrint
             if (Random.Range(0, customer - 1) == 0)
             {
                 Criminal.Add((CharacterEnum)i);
+                Debug.Log(Criminal[i]);
+                Debug.Log(i);
             }
         }
     }
@@ -121,7 +123,7 @@ public class Character : TextPrint
         {
             powder = PowderAmount.NONE;
         }
-        else powder = (PowderAmount)Random.Range(2, 5);
+        else powder = (PowderAmount)Random.Range(1, 4);
 
         if (Criminal.Contains(type))
         {
@@ -141,7 +143,7 @@ public class Character : TextPrint
         TextBar.text += "\n";
         if (Criminal.Contains(type))
         {
-            yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[Random.Range(1, 4)], 0.025f));
+            yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[Random.Range(1, 4) - 1], 0.025f));
         }
         else
             yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.025f));
@@ -153,18 +155,18 @@ public class Character : TextPrint
 
     public void Complete()
     {
-        if (GaugeController.Instance.curValue +10 > 100)
+        if (GaugeController.Instance.curValue + 10 > 150)
         {
-            GaugeController.Instance.curValue = 100; 
+            GaugeController.Instance.curValue = 150;
         }
         else
-        GaugeController.Instance.curValue += 10;
+            GaugeController.Instance.curValue += 10;
         TextBar.text = printData[(int)type].SuccedOrFail[0];
         StartCoroutine(Evade());
     }
     public void Fail()
     {
-        GaugeController.Instance.curValue -= 15;
+            GaugeController.Instance.curValue -= 15;
         if (Criminal.Contains(type))
         {
             TextBar.text = printData[(int)type].SuccedOrFail[0];
