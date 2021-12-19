@@ -74,15 +74,14 @@ public class Character : TextPrint
     {
 
         point = MainSceneUIController.Instance.CheckValue(powder, Gaugerecipe, package);
-        int checkPoint = 0;
-        foreach (int value in Gaugerecipe)
+        int checkPoint = 8;
+
+        /*foreach (int value in Gaugerecipe)
         {
             if (value != 0)
                 checkPoint++;
         }
-        checkPoint += 2;
-        Debug.Log(checkPoint);
-        Debug.Log(point);
+        checkPoint += 2;*/
 
         if (point != checkPoint)
         {

@@ -87,7 +87,7 @@ public class MainSceneUIController : Singleton<MainSceneUIController>
 
         for (int i = 0; i < _checkGauge.Length; i++)
         {
-            if (_checkGauge[i] == thisGaugeStatus[i] &&  _checkGauge[i] != 0)
+            if (_checkGauge[i] == thisGaugeStatus[i])
             {
                 point++;
             }
