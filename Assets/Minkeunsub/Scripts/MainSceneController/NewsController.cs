@@ -27,10 +27,10 @@ public class NewsController : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         SetNextSibling();
         SetNewCharacters();
         InitializeNews();
-        anim = GetComponent<Animator>();
     }
 
     void Update()
