@@ -75,7 +75,7 @@ public class SelectController : Singleton<SelectController>
             RecipeController.Instance.InitAllStatus(false);
             // npc 조건과 비교
 
-            if (NPC_Info.SuccedCheck() || NPC_Info.Criminal.Contains(NPC_Info.type))
+            if (NPC_Info.SuccedCheck() /*|| NPC_Info.Criminal.Contains(NPC_Info.type)*/)
             {
                 NPC_Info.Complete();
                 Debug.Log("compelete");
