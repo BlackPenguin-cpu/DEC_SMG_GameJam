@@ -121,7 +121,7 @@ public class Character : TextPrint
         {
             powder = PowderAmount.NONE;
         }
-        else powder = (PowderAmount)Random.Range(2, 5);
+        else powder = (PowderAmount)Random.Range(1, 4);
 
         if (Criminal.Contains(type))
         {
