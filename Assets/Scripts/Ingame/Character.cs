@@ -85,7 +85,7 @@ public class Character : TextPrint
 
         if (Criminal.Contains(type) && powder != FindObjectOfType<SelectController>().curPowderAmount)
         {
-            
+
             NewsIssue = true;
         }
         if (point != checkPoint)
@@ -134,7 +134,12 @@ public class Character : TextPrint
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Order[recipe], 0.025f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
-        yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.025f));
+        if (Criminal.Contains(type))
+        {
+            yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[Random.Range(1, 4)], 0.025f));
+        }
+        else
+            yield return StartCoroutine(PrintText(TextBar, printData[(int)type].BlackPowder[(int)powder - 1], 0.025f));
         yield return new WaitForSeconds(0.1f);
         TextBar.text += "\n";
         yield return StartCoroutine(PrintText(TextBar, printData[(int)type].Package[package ? 0 : 1], 0.025f));
