@@ -4320,7 +4320,14 @@ MonoBehaviour:
   - hjklhjklhjklhjljh
   - zxcvzxcvzxcvzxs
   - zxcvzxcvzxcvzxs
-  CriminalText: []
+  CriminalText:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   curIdx: 0
   CurCharacters: 
   NowUseSprite: []
@@ -6116,6 +6123,7 @@ MonoBehaviour:
   day: 0
   customer: 0
   customerType: 
+  CustomerList: 
   customerCount: 0
   character: {fileID: 1455704781}
   Daytext: {fileID: 1515437891}
