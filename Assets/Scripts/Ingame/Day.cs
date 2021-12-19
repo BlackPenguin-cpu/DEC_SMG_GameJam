@@ -31,21 +31,23 @@ public class Day : Singleton<Day>
     }
     public IEnumerator DaynextDay()
     {
-
-        Debug.Log("Clear");
-        BigDaytext.gameObject.SetActive(true);
-        while (BlackScreen.color.a > 0)
-        {
-            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a - 0.01f);
-            yield return new WaitForSeconds(0.01f);
-        }
-        BigDaytext.text = "Day" + day;
-        yield return new WaitForSeconds(1);
+        customerCount = 0;
+        Time.timeScale = 0;
         while (BlackScreen.color.a < 1)
         {
-            BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a + 0.01f);
-            yield return new WaitForSeconds(0.01f);
+            BlackScreen.color = new Color(0, 0, 0, BlackScreen.color.a + 0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
+        BigDaytext.gameObject.SetActive(true);
+        BigDaytext.text = "Day" + (day + 1);
+        yield return new WaitForSecondsRealtime(2);
+        BigDaytext.gameObject.SetActive(false);
+        while (BlackScreen.color.a > 0)
+        {
+            BlackScreen.color = new Color(0, 0, 0, BlackScreen.color.a - 0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public IEnumerator GameOver()

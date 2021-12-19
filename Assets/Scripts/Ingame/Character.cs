@@ -104,12 +104,16 @@ public class Character : TextPrint
         while (true)
         {
             type = (CharacterEnum)Random.Range(0, 7);
-            if (Day.Instance.customerType.Contains(type))
+            if (Day.Instance.customerType.Count != 0)
             {
-                ChracterBorad.sprite = ChracterSprite[(int)type];
-                Day.Instance.customerType.Remove(type);
-                break;
+                if (Day.Instance.customerType.Contains(type))
+                {
+                    ChracterBorad.sprite = ChracterSprite[(int)type];
+                    Day.Instance.customerType.Remove(type);
+                    break;
+                }
             }
+            else break;
         }
         recipe = Random.Range(0, 6);
         powder = (PowderAmount)Random.Range(1, 4);
@@ -139,6 +143,7 @@ public class Character : TextPrint
     }
     public void Fail()
     {
+        GaugeController.Instance.curValue -= 15;
         TextBar.text = printData[(int)type].SuccedOrFail[1];
         StartCoroutine(Evade());
     }
@@ -151,6 +156,7 @@ public class Character : TextPrint
             ChracterBorad.color = new Color(1, 1, 1, ChracterBorad.color.a - 0.01f);
             yield return new WaitForSeconds(0.01f);
         }
+        Day.Instance.customerCount++;
         RandSituation();
         while (ChracterBorad.color.a < 1)
         {
