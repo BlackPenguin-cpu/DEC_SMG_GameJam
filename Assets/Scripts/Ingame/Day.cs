@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Day : Singleton<Day>
 {
@@ -66,6 +67,7 @@ public class Day : Singleton<Day>
         }
         Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
+        yield return new WaitForSecondsRealtime(2);
         SceneManager.LoadScene("EndingScene");
 
     }
@@ -95,7 +97,7 @@ public class Day : Singleton<Day>
             }
         }
         customerCount = 0;
-        CustomerList = customerType;
+        CustomerList = customerType.ToList();
         character.RandSituation();
         character.NewsPaperReboot();
     }
