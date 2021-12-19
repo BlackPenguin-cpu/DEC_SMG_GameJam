@@ -95,31 +95,34 @@ public class NewsController : MonoBehaviour
 
         for (int i = 0; i < character.Criminal.Count; i++)
         {
-            switch (character.Criminal[i])
+            if(CurCharacters[i] == character.Criminal[i])
             {
-                case CharacterEnum.COLLEGE:
-                    NowUseText[i] = CriminalText[0];
-                    break;
-                case CharacterEnum.POPO:
-                    NowUseText[i] = CriminalText[1];
-                    break;
-                case CharacterEnum.PEPER:
-                    NowUseText[i] = CriminalText[2];
-                    break;
-                case CharacterEnum.BOYHOOD:
-                    NowUseText[i] = CriminalText[3];
-                    break;
-                case CharacterEnum.PEACH:
-                    NowUseText[i] = CriminalText[4];
-                    break;
-                case CharacterEnum.SCHOOLOLD:
-                    NowUseText[i] = CriminalText[5];
-                    break;
-                case CharacterEnum.SCHOOLYOUNG:
-                    NowUseText[i] = CriminalText[6];
-                    break;
-                default:
-                    break;
+                switch (character.Criminal[i])
+                {
+                    case CharacterEnum.COLLEGE:
+                        NowUseText[i] = CriminalText[0];
+                        break;
+                    case CharacterEnum.POPO:
+                        NowUseText[i] = CriminalText[1];
+                        break;
+                    case CharacterEnum.PEPER:
+                        NowUseText[i] = CriminalText[2];
+                        break;
+                    case CharacterEnum.BOYHOOD:
+                        NowUseText[i] = CriminalText[3];
+                        break;
+                    case CharacterEnum.PEACH:
+                        NowUseText[i] = CriminalText[4];
+                        break;
+                    case CharacterEnum.SCHOOLOLD:
+                        NowUseText[i] = CriminalText[5];
+                        break;
+                    case CharacterEnum.SCHOOLYOUNG:
+                        NowUseText[i] = CriminalText[6];
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
