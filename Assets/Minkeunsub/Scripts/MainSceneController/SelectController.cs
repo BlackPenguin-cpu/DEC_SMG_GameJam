@@ -78,10 +78,12 @@ public class SelectController : Singleton<SelectController>
             if (NPC_Info.SuccedCheck() /*|| NPC_Info.Criminal.Contains(NPC_Info.type)*/)
             {
                 NPC_Info.Complete();
+                Debug.Log("compelete");
             }
             else
             {
                 NPC_Info.Fail();
+                Debug.Log("Fail");
             }
         }
     }
