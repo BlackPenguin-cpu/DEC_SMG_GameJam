@@ -14,6 +14,7 @@ public class Title : MonoBehaviour
     private void Awake()
     {
         fadeInOut = fadeOutPanel.GetComponent<FadeInOut>();
+        PlayerPrefs.SetInt("ClearDayCount", 0);
     }
     // Start is called before the first frame update
     void Start()

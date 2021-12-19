@@ -10,19 +10,17 @@ public class Day : Singleton<Day>
     public int day = 0;
     public int customer;
     public List<CharacterEnum> customerType;
+    public List<CharacterEnum> CustomerList;
     public int customerCount;
     public Character character;
     public TextMeshProUGUI Daytext;
     public Image BlackScreen;
     public TextMeshProUGUI BigDaytext;
 
-    protected override void Awake()
-    {
-        CustomerComing();
-    }
     void Start()
     {
-
+        Daytext.text = "Day " + day;
+        CustomerComing();
     }
 
     private void Update()
@@ -34,6 +32,10 @@ public class Day : Singleton<Day>
     }
     public IEnumerator DaynextDay()
     {
+        //Clear Count
+        int clearDay = PlayerPrefs.GetInt("ClearDayCount");
+        PlayerPrefs.SetInt("ClearDayCount", clearDay + 1);
+
         customerCount = 0;
         Time.timeScale = 0;
         while (BlackScreen.color.a < 1)
@@ -52,6 +54,7 @@ public class Day : Singleton<Day>
         }
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        CustomerComing();
     }
     public IEnumerator GameOver()
     {
@@ -61,8 +64,9 @@ public class Day : Singleton<Day>
             BlackScreen.color = new Color(1, 1, 1, BlackScreen.color.a - 0.01f);
             yield return new WaitForSeconds(0.01f);
         }
+        Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("EndingScene");
 
     }
     void CustomerComing()
@@ -91,6 +95,7 @@ public class Day : Singleton<Day>
             }
         }
         customerCount = 0;
+        CustomerList = customerType;
         character.RandSituation();
         character.NewsPaperReboot();
     }
