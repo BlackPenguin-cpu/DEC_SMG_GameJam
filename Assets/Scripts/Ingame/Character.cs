@@ -155,7 +155,12 @@ public class Character : TextPrint
     public void Fail()
     {
         GaugeController.Instance.curValue -= 15;
-        TextBar.text = printData[(int)type].SuccedOrFail[1];
+        if (Criminal.Contains(type))
+        {
+            TextBar.text = printData[(int)type].SuccedOrFail[0];
+        }
+        else
+            TextBar.text = printData[(int)type].SuccedOrFail[1];
         StartCoroutine(Evade());
     }
     IEnumerator Evade()
