@@ -137,7 +137,6 @@ public class Character : TextPrint
 
     public void Complete()
     {
-        Day.Instance.customerCount++;
         TextBar.text = printData[(int)type].SuccedOrFail[0];
         StartCoroutine(Evade());
     }
