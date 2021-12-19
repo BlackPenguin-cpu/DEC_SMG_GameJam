@@ -51,7 +51,7 @@ public class NewsController : MonoBehaviour
         CurCharacters.Clear();
         NowUseSprite.Clear();
 
-        foreach (var item in Day.Instance.customerType)
+        foreach (var item in Day.Instance.CustomerList)
         {
             CurCharacters.Add(item);
         }
