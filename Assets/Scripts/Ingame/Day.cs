@@ -8,7 +8,7 @@ using System.Linq;
 
 public class Day : Singleton<Day>
 {
-    public int day = 0;
+    public int day;
     public int customer;
     public List<CharacterEnum> customerType;
     public List<CharacterEnum> CustomerList;
@@ -20,6 +20,7 @@ public class Day : Singleton<Day>
 
     protected override void Awake()
     {
+        day = GameManager.Instance.Day;
         Daytext.text = "Day " + day;
         CustomerComing();
     }
@@ -54,6 +55,7 @@ public class Day : Singleton<Day>
             yield return new WaitForSecondsRealtime(0.01f);
         }
         Time.timeScale = 1;
+        GameManager.Instance.Day = day;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         CustomerComing();
     }
