@@ -32,6 +32,10 @@ public class Day : Singleton<Day>
     }
     public IEnumerator DaynextDay()
     {
+        //Clear Count
+        int clearDay = PlayerPrefs.GetInt("ClearDayCount");
+        PlayerPrefs.SetInt("ClearDayCount", clearDay + 1);
+
         customerCount = 0;
         Time.timeScale = 0;
         while (BlackScreen.color.a < 1)
@@ -62,8 +66,7 @@ public class Day : Singleton<Day>
         }
         Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
-        yield return new WaitForSecondsRealtime(2);
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("EndingScene");
 
     }
     void CustomerComing()
