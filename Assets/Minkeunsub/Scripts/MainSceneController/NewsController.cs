@@ -126,6 +126,7 @@ public class NewsController : MonoBehaviour
 
     public void NextNews()
     {
+        SoundManager.Instance.PlaySound("½Å¹®");
         anim.SetBool("IsPass", true);
     }
 

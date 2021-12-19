@@ -32,6 +32,7 @@ public class SelectController : Singleton<SelectController>
 
     public void SelectPacking()
     {
+        SoundManager.Instance.PlaySound("포장");
         Packing = !Packing;
 
         PackingButton.image.color = Packing ? new Color(0, 0, 0, 1) : new Color(1, 1, 1, 1);
@@ -39,6 +40,7 @@ public class SelectController : Singleton<SelectController>
 
     public void SelectPowderAmount(int n)
     {
+        SoundManager.Instance.PlaySound("화약");
         InitializeButtons();
 
         powderAmountSelect[n].image.color = new Color(0, 0, 0, 1);
@@ -57,7 +59,7 @@ public class SelectController : Singleton<SelectController>
     {
         if (NPC_Info.canComplte)
         {
-
+            SoundManager.Instance.PlaySound("성공");
             List<int> temp = new List<int>();
             foreach (var item in RecipeController.Instance.gaugeStatus)
             {

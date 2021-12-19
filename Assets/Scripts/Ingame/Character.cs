@@ -55,6 +55,7 @@ public class Character : TextPrint
     public bool canComplte;
     private void Start()
     {
+        SoundManager.Instance.Playbgm("¿Œ∞‘¿”");
         StartCoroutine(Chat());
     }
 

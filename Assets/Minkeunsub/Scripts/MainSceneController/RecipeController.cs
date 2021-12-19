@@ -75,7 +75,10 @@ public class RecipeController : Singleton<RecipeController>
         }
 
         if (eventActive)
+        {
             anim.SetBool("IsEvent", true);
+            SoundManager.Instance.PlaySound("초기화");
+        }
     }
 
     public void EndEvent()
@@ -87,6 +90,22 @@ public class RecipeController : Singleton<RecipeController>
     {
         if (curGaugeIndex < maxGaugeIndex)
         {
+            switch (state)
+            {
+                case 1:
+                    SoundManager.Instance.PlaySound("버튼A");
+                    break;
+                case 2:
+                    SoundManager.Instance.PlaySound("버튼B");
+                    break;
+                case 3:
+                    SoundManager.Instance.PlaySound("버튼C");
+                    break;
+                case 4:
+                    SoundManager.Instance.PlaySound("버튼D");
+                    break;
+            }
+
             recipeGauges[curGaugeIndex].color = gauge_colors[state - 1];
             gaugeStatus[curGaugeIndex] = (GaugeStatus)state;
             curGaugeIndex++;

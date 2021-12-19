@@ -70,6 +70,8 @@ public class Day : Singleton<Day>
         Time.timeScale = 0;
         BigDaytext.text = "GAME OVER...";
         yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = 1;
+        BlackScreen.gameObject.SetActive(false);
         SceneManager.LoadScene("EndingScene");
 
     }
