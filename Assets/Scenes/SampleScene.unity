@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gauge: {fileID: 378036117}
-  maxValue: 100
+  maxValue: 150
   curValue: 0
   delay: 0
 --- !u!1 &494749967
